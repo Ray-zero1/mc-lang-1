@@ -40,6 +40,15 @@ class Lexer {
             // 7. このトークンは数値だったので、tok_numberをreturnする。
             //
             // ここに実装して下さい
+	    if (isdigit(lastChar)){
+                std::string str = "";
+                str += lastChar;
+               while (isdigit(lastChar = getNextChar(iFile))){
+                str += lastChar;
+               }
+               setnumVal(std::stod(str));
+               return tok_number;
+           }
 
             // TODO 1.4: コメントアウトを実装してみよう
             // '#'を読んだら、その行の末尾まで無視をするコメントアウトを実装する。
