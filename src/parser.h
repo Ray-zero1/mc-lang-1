@@ -129,7 +129,16 @@ static std::unique_ptr<ExprAST> ParseParenExpr() {
     // 4. getNextToken()を呼んでトークンを一つ進め、2で呼んだParseExpressionの返り値を返します。
     //
     // 課題を解く時はこの行を消してここに実装して下さい。
-    return nullptr;
+    getNextToken();
+    auto ExprAST = ParseExpression();
+    if (nullptr == ExprAST){
+       return nullptr;
+    }
+    if (CurTok != ')'){
+       return LogError("NOT KKAKO");
+    }
+    getNextToken();
+    return ExprAST;
 }
 
 // ParsePrimary - NumberASTか括弧をパースする関数
