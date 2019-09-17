@@ -59,6 +59,17 @@ class Lexer {
             //
             // ここに実装して下さい
 
+            if (lastChar == '#'){
+                lastChar =getNextChar(iFile);
+                while(lastChar != EOF && lastChar != '\n'){
+                 lastChar = getNextChar(iFile);
+                 }
+                if (lastChar !=EOF){
+                  return gettok();
+                }
+             }
+
+
             // EOFならtok_eofを返す
             if (iFile.eof())
                 return tok_eof;
