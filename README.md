@@ -50,3 +50,16 @@ makeをすると、`mc`という実行可能ファイルが出来ます。これ
 
 
 課題は以上になります。お疲れ様でした！！
+
+#### 実装メモ
+最初に
+`sudo apt-get install clang-8 lldb-8 lld-8`としたが、
+
+`/bin/sh:1 clang++: not found `とエラーが出た。
+
+そこで、
+`sudo apt-get install clang`
+とすると解決した。
+
+その後はcloneしてmakeして開発開始。
+
